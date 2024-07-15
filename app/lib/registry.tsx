@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import { useServerInsertedHTML } from "next/navigation";
-import { ServerStyleSheet, StyleSheetManager } from "styled-components";
-import { ThemeProvider } from "@mui/material";
-import theme from "../styles/theme";
-import { GlobalStyle } from "../styles/global-styles";
+import React, { useState } from 'react';
+import { useServerInsertedHTML } from 'next/navigation';
+import { ServerStyleSheet, StyleSheetManager } from 'styled-components';
+import { ThemeProvider } from '@mui/material';
+import theme from '../styles/theme';
+import { GlobalStyle } from '../styles/global-styles';
 
 type Props = {
   children: React.ReactNode;
@@ -20,7 +20,7 @@ export default function StyledComponentsRegistry({ children }: Props) {
     return <>{styles}</>;
   });
 
-  if (typeof window !== "undefined") return <>{children}</>;
+  if (typeof window !== 'undefined') return <>{children}</>;
 
   return (
     <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>
